@@ -13,6 +13,8 @@ function convertPokeApiDetailToPokemon(pokeDetail) {
     pokemon.type = type
 
     pokemon.photo = pokeDetail.sprites.other.dream_world.front_default
+    pokemon.stats = pokeDetail.stats.map((base_stats)=>base_stats.base_stat)
+    pokemon.name_stats = pokeDetail.stats.map((base_stat)=>base_stat.stat.name)
 
     return pokemon
 }
